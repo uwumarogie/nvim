@@ -131,6 +131,7 @@ A curated list of plugins to extend Neovim's functionality.
 ### Appearance
 
 - **[tokyonight.nvim](https://github.com/folke/tokyonight.nvim)**: Tokyo Night color scheme for Neovim.
+- **[better-ts-errors.nvim](https://github.com/OlegGulevskyy/better-ts-errors.nvim)**: Better error messages for Neovim.
 
 ---
 

@@ -57,5 +57,6 @@ return {
     }
     vim.keymap.set('n', '<C-n>', '<cmd>NvimTreeToggle<CR>', { desc = 'Toggle NvimTree' })
     vim.keymap.set('n', '<leader>t', '<cmd>NvimTreeFocus<CR>', { desc = 'Focus NvimTree' })
+    vim.keymap.set('n', '<leader>co', '<cmd>NvimTreeCollapse<CR>', { desc = 'Collapse NvimTree' })
   end,
 }

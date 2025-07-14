@@ -4,6 +4,17 @@ return {
     'nvim-tree/nvim-web-devicons',
   },
   config = function()
+    local function my_on_attach(bufnr)
+      local api = require 'nvim-tree.api'
+      local function opts(desc)
+        return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+      end
+      api.config.mappings.default_on_attach(bufnr)
+      vim.keymap.set('n', '<CR>', api.node.open.edit, opts 'Open')
+      vim.keymap.set('n', 'o', api.node.open.edit, opts 'Open')
+      vim.keymap.set('n', 'a', api.fs.create, opts 'Create')
+    end
+
     require('nvim-tree').setup {
       disable_netrw = true,
       hijack_netrw = true,
@@ -42,18 +53,13 @@ return {
       view = {
         width = 50,
         side = 'left',
-        mappings = {
-          list = {
-            { key = { '<CR>', 'o' }, action = 'edit' },
-            { key = 'a', action = 'create' },
-          },
-        },
       },
       actions = {
         open_file = {
           quit_on_open = false,
         },
       },
+      on_attach = my_on_attach,
     }
     vim.keymap.set('n', '<C-n>', '<cmd>NvimTreeToggle<CR>', { desc = 'Toggle NvimTree' })
     vim.keymap.set('n', '<leader>t', '<cmd>NvimTreeFocus<CR>', { desc = 'Focus NvimTree' })

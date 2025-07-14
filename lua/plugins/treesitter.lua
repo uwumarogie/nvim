@@ -18,9 +18,9 @@ return {
       'rust',
       'toml',
       'yaml',
-      'typescriptreact',
-      'mdx',
-      'md',
+      'tsx',
+      'markdown',
+      'markdown_inline',
     },
     auto_install = true,
     highlight = {

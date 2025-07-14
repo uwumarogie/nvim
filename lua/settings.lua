@@ -74,3 +74,15 @@ vim.opt.scrolloff = 10
 vim.opt.shortmess:append 'I'
 
 vim.diagnostic.enable()
+-- Treat MDX files as Markdown for syntax highlighting
+if vim.filetype and vim.filetype.add then
+  vim.filetype.add {
+    extension = {
+      mdx = "markdown",
+    },
+  }
+else
+  vim.cmd [[
+    autocmd BufRead,BufNewFile *.mdx set filetype=markdown
+  ]]
+end

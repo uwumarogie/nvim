@@ -19,6 +19,7 @@ return {
         typescript = { 'prettierd', 'prettier', stop_after_first = true },
         typescriptreact = { 'prettierd', 'prettier', stop_after_first = true },
         java = { 'google-java-format' },
+        svg = {  'prettier', stop_after_first = true },
       },
     }
 

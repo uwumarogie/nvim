@@ -19,4 +19,5 @@ return {
   require 'plugins.none-ls',
   require 'plugins.lazyvim',
   require 'plugins.which-key',
+  require 'plugins.claude-code',
 }
